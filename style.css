@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+}
+
+body{
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.title{
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* container */
+.container{
+  width: 100%;
+  padding: 1rem;
+}
+
+/* question */
+.output{
+  background-color: antiquewhite;
+  padding: 1rem;
+}

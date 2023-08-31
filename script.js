@@ -164,3 +164,59 @@ console.log(`The answer for seventh problem is\n`);
 console.log(targetObj);
 
 // 8.Write a program that takes a function with an array parameter and destructure the array inside the function.
+
+const displayArr = (arr)=>{
+  [firstElement,secElement,...restElement] = arr;
+  console.log(`First Element is ${firstElement}`);
+  console.log(`Second Element is ${secElement}`);
+  console.log(`Remaining Element is ${restElement}`);
+}
+
+console.log(`The answer for eighth problem is\n\n`);
+displayArr([1,2,3,4,5])
+
+// 9. Write a program that takes a nested object containing numeric values and calculates the sum of all values.
+
+const nestedObj = {
+  a:1,
+  b:2,
+  c:{d:3,e:{f:4}}
+}
+let sum = 0;
+function sumObj(nestedObj){
+  for (const iterator of Object.values(nestedObj)) {
+    if(typeof(iterator) == "number"){
+      sum += iterator;
+    }else if(typeof(iterator) == "object"){
+      sumObj(iterator);
+    }
+  }
+  return sum;
+}
+console.log(`The answer for ninth problem is\n`);
+console.log(sumObj(nestedObj));  
+
+// 10. Write a program that takes an object and counts the occurrences of each property
+const countObj = {
+  name: 'john',
+  age: 30,
+  city: 'New York',
+  occupation: 'Engineer'
+}
+
+let countObject = {};
+const countOfKeys = (countObj)=>{
+  Object.keys(countObj).forEach((ele,ind,arr)=>{
+    let count = 0;
+    arr.forEach((secEle)=>{
+      if(ele == secEle){
+        count++;
+      }
+    })
+    countObject[ele]=count;
+  })
+  console.log(countObject);
+}
+console.log(`The answer for tenth problem is\n`);
+countOfKeys(countObj)
+
